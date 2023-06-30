@@ -1,4 +1,13 @@
+
 {
+  "Numbers":[{
+    "first":1,
+    "second":2,
+    "third":3,
+    "id":1
+  }
+    
+  ],
   "short_name": "React App",
   "name": "Create React App Sample",
   "icons": [
@@ -22,4 +31,6 @@
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
+  
 }
+
