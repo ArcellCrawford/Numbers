@@ -1,5 +1,7 @@
 import { useState } from "react";
 import React from "react";
+import "./App.css";
+import img1 from "./thumbs_up-removebg-preview.png"
 // Dont need the import under this
 // import Display from "./Display";
 
@@ -17,8 +19,9 @@ const Create = () => {
     console.log(numbers);
     const maxNumber = Math.max(...numbers);
     const minNumber = Math.min(...numbers)
-    const sortedNumbers= numbers.sort()
+    const sortedNumbers= numbers.sort(function(a, b){return a-b})
     const midNumber = sortedNumbers[1]
+    console.log(sortedNumbers)
     //Set the Highest, Middle, and lowest number
     setHighest(maxNumber);
     setlowest(minNumber);
@@ -26,11 +29,13 @@ const Create = () => {
   }
   return (
     <div className="create">
-      <h2>Sorted Numbers</h2>
+      <h2 className="center">Sorted Numbers</h2>
+      <h3 className = 'center2'>Input three different numbers and I will list them least to greatest!</h3>
       <form onSubmit={handleSubmit}>
-        <label>First Number</label>
+      <div className="box">
+        <label className="font">First Number</label>
         <input
-          type="text"
+          type="number"
           required
           value={first}
           onChange={(e) => setFirst(e.target.value)}
@@ -39,7 +44,7 @@ const Create = () => {
         <br/>
         <label>Second number</label>
         <input
-          type="text"
+          type="number"
           required
           value={second}
           onChange={(e) => setSecond(e.target.value)}
@@ -48,22 +53,28 @@ const Create = () => {
         <br/>
         <label>Third Number</label>
         <input
-          type="text"
+          type="number"
           required
           value={third}
           onChange={(e) => setThird(e.target.value)}
         />
+         </div>
         <br/>
         <br/>
+        
         <button>Get sorted list</button>
-        <br/>
+        
+        <br/>    
       </form>
+      
       <h3>{lowest}</h3>
       <br/>
       <h2>{Middle}</h2>
       <br/>
       <h1>{highest}</h1>
-
+      
+      <img src={img1} alt="Thumbs Up" className="img"/>
+       
     </div>
   );
 }
